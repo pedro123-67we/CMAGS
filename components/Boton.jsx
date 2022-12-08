@@ -22,12 +22,16 @@ export default Boton
 const styles= StyleSheet.create({
     buttonContainer:{
         backgroundColor: 'blue',
-        marginBottom: 10,
+        marginBottom: '25%',
+        marginTop:'10%',
         paddingHorizontal: 50,
         paddingVertical: 10,
         alignItems: 'center',
+        borderRadius:'8%',
+    
     },
     buttonText:{
-        color:'#f9f9f9',
+        color:'#ffffff',
+        borderRadius:'10%',
     }
 })
