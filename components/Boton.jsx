@@ -12,6 +12,7 @@ const Boton = (props) => {
         >
             <Text style= {styles.buttonText}>
                 {text}
+                Ingresa
             </Text>
         </TouchableOpacity>
     )
@@ -23,11 +24,13 @@ const styles= StyleSheet.create({
     buttonContainer:{
         backgroundColor: 'blue',
         marginBottom: '25%',
-        marginTop:'10%',
+        marginTop:'5%',
+       
         paddingHorizontal: 50,
         paddingVertical: 10,
         alignItems: 'center',
         borderRadius:'8%',
+        width: '80%'
     
     },
     buttonText:{

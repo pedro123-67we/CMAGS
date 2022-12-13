@@ -9,7 +9,7 @@ const Requests = {
     NURSE_REQUEST: "http://127.0.0.1:8000/api/v1/nurse",
     QA_REQUEST: "http://127.0.0.1:8000/api/v1/qa",
     RESIDENT_REQUEST: "http://127.0.0.1:8000/api/v1/resident",
-    LOGIN_REQUEST: "http://192.168.100.120:8000/api/v1/login",
+    LOGIN_REQUEST: "http://192.168.100.120:8000/api/v1/auth",
 };
 const useFetch = () => {
     const loginRequest = async (data) => {
@@ -18,16 +18,12 @@ const useFetch = () => {
         const result = await axios.post(Requests.LOGIN_REQUEST, {
         ...data,
     });
-    // console.log(result);
-        // Swal.fire("Good job!", "Te has loggeado!", "success");
+
         console.log("te has logeado");
         } catch (err) {
-        // Swal.fire({
-        //     icon: "error",
-        //     title: "Oops...",
-        //     text: err.response.data.msg,
-        // });
-        console.log(err);
+     
+        const message= (err.response.data.msg); 
+        throw new Error(message);
         }
     };
     return { loginRequest };
