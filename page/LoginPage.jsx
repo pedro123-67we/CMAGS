@@ -5,7 +5,7 @@ import {
   TextInput
 } from "react-native";
 import React from "react";
-import Boton from "../components/Boton";
+import Button from "../components/Button";
 import useFetch from "../hooks/useFetch";
 import { useForm, Controller } from "react-hook-form";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -66,7 +66,7 @@ const LoginPage = ({ navigation }) => {
           )}
           name="password"
         />
-        <Boton
+        <Button
           title="Submit"
           placeholder="Ingresar"
           onPress={handleSubmit(onSubmit)}
