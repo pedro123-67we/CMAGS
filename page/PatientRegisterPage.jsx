@@ -17,6 +17,7 @@ const PatientRegisterPage = ({ navigation }) => {
     setValue,
     formState: { errors },
   } = useForm();
+
   const cleanForm = () => {
     setValue("name", "");
     setValue("typeOfCancer", "");
@@ -24,9 +25,10 @@ const PatientRegisterPage = ({ navigation }) => {
     setValue("palliative", "");
     setValue("age", "");
   };
+
   const { patientRequest } = useFetch();
+  
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       Alert.alert("Agregar Paciente?", "", [
         {
