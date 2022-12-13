@@ -5,7 +5,6 @@ import LoginPage from '../page/LoginPage';
 import PatientRegisterPage from '../page/PatientRegisterPage';
 
 const Stack = createNativeStackNavigator()
-
 const MainStack = () => {
     return (
         <NavigationContainer>
@@ -19,6 +18,8 @@ const MainStack = () => {
                     name= 'PatientRegister'
                     component={PatientRegisterPage}
                 />
+
+            
             </Stack.Navigator>
         </NavigationContainer>
 )
