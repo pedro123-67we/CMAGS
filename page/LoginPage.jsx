@@ -2,8 +2,7 @@ import {
   View,
   Image,
   StyleSheet,
-  TextInput,
-
+  TextInput
 } from "react-native";
 import React from "react";
 import Boton from "../components/Boton";

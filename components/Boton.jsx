@@ -4,14 +4,13 @@ import React from 'react'
 const Boton = (props) => {
 
     const { onPress,text }= props
-
+    
     return (
         <TouchableOpacity
         style={styles.buttonContainer}
         onPress={onPress}
         >
-            <Text style= {styles.buttonText}>
-                {text}
+            <Text style= {styles.ButtonText}>
                 Ingresa
             </Text>
         </TouchableOpacity>
@@ -31,9 +30,8 @@ const styles= StyleSheet.create({
         alignItems: 'center',
         borderRadius:'8%',
         width: '80%'
-    
     },
-    buttonText:{
+    ButtonText:{
         color:'#ffffff',
         borderRadius:'10%',
     }
