@@ -1,4 +1,5 @@
 import axios from "axios";
+
 const Requests = {
 	DAILY_FORM_REQUEST: "http://127.0.0.1:8000/api/v1/medical-daily-form",
 	RED_EVAT_REQUEST: "http://127.0.0.1:8000/api/v1/red-evat",
@@ -10,6 +11,7 @@ const Requests = {
 	RESIDENT_REQUEST: "http://127.0.0.1:8000/api/v1/resident",
 	LOGIN_REQUEST: "http://127.0.0.1:8000/api/v1/login",
 };
+
 const useFetch = () => {
 	const patientRequest = async data => {
 		try {
@@ -21,6 +23,22 @@ const useFetch = () => {
 			console.log("Paciente no registrado");
 		}
 	};
-	return { patientRequest };
+
+	const loginRequest = async data => {
+		console.log(data);
+		try {
+			await axios.post(Requests.LOGIN_REQUEST, {
+				...data,
+			});
+
+			console.log("te has logeado");
+		} catch (err) {
+			const message = err.response.data.msg;
+			throw new Error(message);
+		}
+	};
+
+	return { patientRequest, loginRequest };
 };
+
 export default useFetch;
