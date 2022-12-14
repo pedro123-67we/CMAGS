@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Boton from '../components/Boton'
+import Boton from '../components/Button'
 
 const PatientRegisterPage = ({ navigation }) => {
     return (
