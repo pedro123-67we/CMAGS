@@ -6,14 +6,17 @@ import PatientRegisterPage from "../page/PatientRegisterPage";
 
 const Stack = createNativeStackNavigator();
 const MainStack = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="PatientRegister" component={PatientRegisterPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name="Login" component={LoginPage} />
+				<Stack.Screen
+					name="PatientRegister"
+					component={PatientRegisterPage}
+				/>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 };
 
 export default MainStack;
