@@ -1,8 +1,9 @@
-import { View, Text } from 'react-native'
+import { View} from 'react-native'
 import React from 'react'
 import Boton from '../components/Boton'
 
 const PatientRegisterPage = ({ navigation }) => {
+    
     return (
         <View>
             <Boton 
@@ -11,8 +12,16 @@ const PatientRegisterPage = ({ navigation }) => {
                 navigation.navigate('Login')
             }}
             />
+            <Boton 
+            text = "Ir a nurse form"
+            onPress={()=>{
+                navigation.navigate('Registro de Personal')
+            }}
+            />
         </View>
+
     )
 }
+
 
 export default PatientRegisterPage
