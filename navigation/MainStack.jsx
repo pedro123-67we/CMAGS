@@ -9,6 +9,7 @@ import NursePage from '../page/NursePage';
 import PatientRegisterPage from '../page/PatientRegisterPage';
 import Home from '../page/Home'
 import Settings from '../page/Settings';
+import RedEvat from '../page/RedEvat'
 
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +53,16 @@ const Tab = createBottomTabNavigator();
                             <MaterialCommunityIcons name="account-cog" size={30} color={color} />
                         )
                     }}
+                    />
+                                    <Tab.Screen 
+                    name="Red Evat" 
+                    component={RedEvat}
+                    options={{
+                        tabBarLabel:'Red Evat',
+                        tabBarIcon:({color,size})=>(
+                            <MaterialCommunityIcons name="home" size={30} color={color} />
+                        )
+                    }} 
                     />
             </Tab.Navigator>
         );

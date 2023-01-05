@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import {View} from 'react-native';
+import { View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import Formularios from '.././components/Formularios'
+import Forms from ".././components/Forms";
 
 const NursePage = () => {
-    const [selectedValue, setSelectedValue] = useState("Registro Enfermeras");
-  return(
-    <View 
-      style={{ justifyContent:'center', alignItems:'center'}}>
+  const [selectedValue, setSelectedValue] = useState("Registro Enfermeras");
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
       <Picker
         selectedValue={selectedValue}
-        style={{ height: 50, width: 250, margin:'5%' }}
-        onValueChange={(itemValue) => setSelectedValue(itemValue)}>
-
-        <Picker.Item label="Registro Enfermeras" value="Enfermera"  />
+        style={{ height: 50, width: 250, margin: "5%" }}
+        onValueChange={(itemValue) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Registro Enfermeras" value="Enfermera" />
         <Picker.Item label="Reistro Doctores" value="Doctor" />
         <Picker.Item label="Reistro Residente" value="Residente" />
-      </Picker><Formularios></Formularios>
-      </View>
-  )
-
+      </Picker>
+      <Forms></Forms>
+    </View>
+  );
 };
-
 
 export default NursePage;
