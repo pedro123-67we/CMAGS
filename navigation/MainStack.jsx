@@ -11,7 +11,17 @@ import Home from '../page/Home'
 import Settings from '../page/Settings';
 import RedEvat from '../page/RedEvat'
 
-const Stack = createNativeStackNavigator();
+
+const LogoutStack = createNativeStackNavigator(); 
+
+function Logout(){
+    return (
+        <LogoutStack.Navigator>
+            <LogoutStack.Screen 
+            name="Login" 
+            component={LoginPage} />
+        </LogoutStack.Navigator>
+    )}
 
 const Tab = createBottomTabNavigator();
     function MyTabs(){
@@ -24,6 +34,16 @@ const Tab = createBottomTabNavigator();
                     tabBarHideOnKeyboard:true
                 }}
                 >
+                <Tab.Screen 
+                    name="Login" 
+                    component={Logout}
+                    options={{
+                        tabBarLabel:'Logout',
+                        tabBarIcon:({color,size})=>(
+                            <MaterialCommunityIcons name="home-circle-outline" size={30} color={color} />
+                        )
+                    }} 
+                    />
                 <Tab.Screen 
                     name="Home" 
                     component={Home}
@@ -54,7 +74,7 @@ const Tab = createBottomTabNavigator();
                         )
                     }}
                     />
-                                    <Tab.Screen 
+                    <Tab.Screen 
                     name="Red Evat" 
                     component={RedEvat}
                     options={{
@@ -67,34 +87,6 @@ const Tab = createBottomTabNavigator();
             </Tab.Navigator>
         );
     }
-
-const MainStack = () => {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen 
-                    name= 'Login'
-                    component={LoginPage}
-                />
-
-                <Stack.Screen 
-                    name= 'PatientRegister'
-                    component={PatientRegisterPage}
-                />
-
-                <Stack.Screen 
-                    name= 'Registro de Personal'
-                    component={NursePage}
-                />
-
-                <Stack.Screen 
-                    name= 'Home'
-                    component={Home}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
-)
-}
 export default function Navigation(){
     return(
         <NavigationContainer>

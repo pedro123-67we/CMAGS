@@ -1,18 +1,18 @@
 import { View } from "react-native";
 import React from "react";
-import Boton from "../components/Boton";
+import Button from "../components/Button";
 
 const LoginPage = ({ navigation }) => {
   return (
     <View>
-      <Boton
+      <Button
         text="Ir a registro"
         onPress={() => {
           navigation.navigate("Home");
         }}
       />
 
-      <Boton
+      <Button
         text="Ir a Registro Personal"
         onPress={() => {
           navigation.navigate("Registro de Personal");
