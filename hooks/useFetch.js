@@ -1,33 +1,41 @@
 import axios from "axios";
-import Swal from "react-native-sweet-alert";
+import { Alert } from "react-native";
+import { API_BASE_URL as baseUrl } from "@env";
 
 const Requests = {
-    DAILY_FORM_REQUEST: "http://127.0.0.1:8000/api/v1/medical-daily-form",
-    RED_EVAT_REQUEST: "http://127.0.0.1:8000/api/v1/red-evat",
-    PATIENT_REQUEST: "http://127.0.0.1:8000/api/v1/patient",
-    RECORD_REQUEST: "http://127.0.0.1:8000/api/v1/record",
-    DOCTOR_REQUEST: "http://127.0.0.1:8000/api/v1/doctor",
-    NURSE_REQUEST: "http://192.168.100.111:8000/api/v1/nurse",
-    QA_REQUEST: "http://127.0.0.1:8000/api/v1/qa",
-    RESIDENT_REQUEST: "http://127.0.0.1:8000/api/v1/resident",
-    LOGIN_REQUEST: "http://127.0.0.1:8000/api/v1/login",
+  DAILY_FORM_REQUEST: `${baseUrl}/api/v1/medical-daily-form`,
+  RED_EVAT_REQUEST: `${baseUrl}/api/v1/red-evat`,
+  PATIENT_REQUEST: `${baseUrl}/api/v1/patient`,
+  RECORD_REQUEST: `${baseUrl}/api/v1/record`,
+  DOCTOR_REQUEST: `${baseUrl}/api/v1/doctor`,
+  NURSE_REQUEST: `${baseUrl}/api/v1/nurse`,
+  QA_REQUEST: `${baseUrl}/api/v1/qa`,
+  RESIDENT_REQUEST: `${baseUrl}/api/v1/resident`,
+  LOGIN_REQUEST: `${baseUrl}/api/v1/auth`,
 };
 const useFetch = () => {
-    const loginRequest = async (data) => {
+  const patientRequest = async (data) => {
     try {
-        const result = await axios.post(Requests.LOGIN_REQUEST, {
+      await axios.post(Requests.PATIENT_REQUEST, {
         ...data,
-    });
-    console.log(result);
-        Swal.fire("Good job!", "Te has loggeado!", "success");
-        } catch (err) {
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: err.response.data.msg,
-        });
-        }
-    };
-    return { loginRequest };
+      });
+      console.log("Paciente Registrado");
+    } catch (err) {
+      console.log("Paciente no registrado");
+    }
+  };
+
+  const loginRequest = async (data) => {
+    try {
+      const user = await axios.post(Requests.LOGIN_REQUEST, {
+        ...data,
+      });
+      Alert.alert("Bienvenido");
+    } catch (err) {
+      console.log(err);
+      throw new Error(err.response.data.msg);
+    }
+  };
+  return { patientRequest, loginRequest };
 };
 export default useFetch;

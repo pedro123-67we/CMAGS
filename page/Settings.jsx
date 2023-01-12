@@ -10,7 +10,7 @@ const Settings = () => {
       <Text>Settings</Text>
       <TouchableOpacity
         style={styles.buttonOut}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("LoginPage")}
       >
         <Text>Logout</Text>
       </TouchableOpacity>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "red",
     justifyContent: "flex-end",
-    alignItems:"center"
+    alignItems: "center",
   },
 });
 

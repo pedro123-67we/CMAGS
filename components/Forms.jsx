@@ -16,7 +16,7 @@ const Forms = () => {
     setValue("name", "");
     setValue("email", "");
     setValue("phone", "");
-    setValue("especiality", "");
+    setValue("speciality", "");
     setValue("password", "");
   };
 
@@ -70,7 +70,7 @@ const Forms = () => {
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
             style={styles.formInput}
-            placeholder="Ingresa correo electronico"
+            placeholder="Ingresa correo electrónico"
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -87,7 +87,7 @@ const Forms = () => {
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
             style={styles.formInput}
-            placeholder="Ingresa numero de telefono"
+            placeholder="Ingresa numero de teléfono"
             keyboardType="numeric"
             maxLength={10}
             onBlur={onBlur}
