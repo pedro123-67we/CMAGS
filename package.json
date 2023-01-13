@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint src --color",
+    "prettier": "prettier src -check"
   },
   "dependencies": {
     "@react-native-picker/picker": "^2.4.8",
@@ -33,7 +35,19 @@
     "react-native-web": "^0.18.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "eslint": "^8.29.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-native": "^4.0.0",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "react-native-clean-project": "^4.0.1"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
 }
