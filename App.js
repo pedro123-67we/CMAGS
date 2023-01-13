@@ -1,16 +1,7 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import MainStack from "./navigation/MainStack";
-import { StyleSheet } from "react-native";
+import Navigation from "./navigation/MainStack";
+import NavigationStack from "./navigation/Navigation";
 
 export default function App() {
-	return (
-		<SafeAreaView style={style.safeArea}>
-			<MainStack />
-		</SafeAreaView>
-	);
+  return <Navigation />;
 }
-
-const style = StyleSheet.create({
-	safeArea: { flex: 1 },
-});
