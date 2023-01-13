@@ -1,14 +1,6 @@
-import {
-	StyleSheet,
-	TextInput,
-	SafeAreaView,
-	Button,
-	Alert,
-} from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { View } from "react-native";
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
-import useFetch from "../hooks/useFetch";
+import Button from "../components/Button";
 
 // eslint-disable-next-line react/prop-types
 const PatientRegisterPage = ({navigation}) => {
@@ -149,35 +141,5 @@ const PatientRegisterPage = ({navigation}) => {
 		</KeyboardAwareScrollView>
 	);
 };
-
-const styles = StyleSheet.create({
-	input: {
-		borderColor: "gray",
-		width: "80%",
-		borderWidth: 1,
-		borderRadius: 10,
-		padding: 15,
-		margin: 20,
-	},
-
-	container: {
-		marginTop: "25%",
-		marginVertical: "10%",
-		borderWidth: 1,
-		borderColor: "black",
-		backgroundColor: "white",
-		margin: 25,
-		alignItems: "center",
-		shadowColor: "#000",
-		shadowOffset: {
-			width: 0,
-			height: 6,
-		},
-		shadowOpacity: 0.3,
-		shadowRadius: 4.65,
-		elevation: 8,
-		borderRadius: 15,
-	},
-});
 
 export default PatientRegisterPage;
