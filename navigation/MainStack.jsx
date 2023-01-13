@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import LoginPage from "../page/LoginPage";
 import PatientRegisterPage from "../page/PatientRegisterPage";
+import DailyForm from "../page/DailyForm";
 
 const Stack = createNativeStackNavigator();
 const MainStack = () => {
@@ -13,6 +14,10 @@ const MainStack = () => {
 				<Stack.Screen
 					name="PatientRegister"
 					component={PatientRegisterPage}
+				/>
+				<Stack.Screen
+					name="DailyForm"
+					component={DailyForm}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

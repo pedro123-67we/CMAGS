@@ -1,15 +1,15 @@
 import axios from "axios";
 
 const Requests = {
-	DAILY_FORM_REQUEST: "http://127.0.0.1:8000/api/v1/medical-daily-form",
+	DAILY_FORM_REQUEST: "http://192.168.100.120:8000/api/v1/medical-daily-form",
 	RED_EVAT_REQUEST: "http://127.0.0.1:8000/api/v1/red-evat",
-	PATIENT_REQUEST: "http://192.168.100.120:8000/api/v1/patient",
+	PATIENT_REQUEST: "http://192.168.100.100:8000/api/v1/patient",
 	RECORD_REQUEST: "http://127.0.0.1:8000/api/v1/record",
 	DOCTOR_REQUEST: "http://127.0.0.1:8000/api/v1/doctor",
 	NURSE_REQUEST: "http://127.0.0.1:8000/api/v1/nurse",
 	QA_REQUEST: "http://127.0.0.1:8000/api/v1/qa",
 	RESIDENT_REQUEST: "http://127.0.0.1:8000/api/v1/resident",
-	LOGIN_REQUEST: "http://127.0.0.1:8000/api/v1/login",
+	LOGIN_REQUEST: "http://192.168.100.120:8000/api/v1/auth",
 };
 
 const useFetch = () => {
@@ -18,9 +18,9 @@ const useFetch = () => {
 			await axios.post(Requests.PATIENT_REQUEST, {
 				...data,
 			});
-			console.log("Paciente Registrado");
+			console.log("Formulario llenado");
 		} catch (err) {
-			console.log("Paciente no registrado");
+			console.log("Formulario no llenado correctamente");
 		}
 	};
 
@@ -33,12 +33,24 @@ const useFetch = () => {
 
 			console.log("te has logeado");
 		} catch (err) {
-			const message = err.response.data.msg;
+			const message = err?.response?.data.msg || "somenthing went wrong";
 			throw new Error(message);
 		}
 	};
+	const postEvatForm =(async(info)=>{
+		try {
+			const {data} = await axios.post(Requests.DAILY_FORM_REQUEST, {...info});
+			return data.result;
+		} catch (err) {
+			const message = err?.response?.data.msg || "somenthing went wrong";
+			throw new Error(message);
+		}
+		
+	});
 
-	return { patientRequest, loginRequest };
+	return { patientRequest, loginRequest, postEvatForm };
 };
+
+
 
 export default useFetch;

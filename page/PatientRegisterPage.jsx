@@ -10,7 +10,8 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import useFetch from "../hooks/useFetch";
 
-const PatientRegisterPage = () => {
+// eslint-disable-next-line react/prop-types
+const PatientRegisterPage = ({navigation}) => {
 	const { control, handleSubmit, setValue } = useForm();
 
 	const cleanForm = () => {
@@ -135,6 +136,14 @@ const PatientRegisterPage = () => {
 					style={styles.button}
 					color={"green"}
 					title="Añadir"
+				/>
+				<Button
+					onPress={()=>{
+						// eslint-disable-next-line react/prop-types
+						navigation.navigate("DailyForm");
+					}}
+					title="Añadir"
+					
 				/>
 			</SafeAreaView>
 		</KeyboardAwareScrollView>

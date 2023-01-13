@@ -81,13 +81,13 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		padding: 15,
 		margin: 10,
-		borderRadius: "8%",
+		borderRadius: 8,
 	},
 
 	image: {
 		width: "40%",
 		height: "35%",
-		borderRadius: "40%",
+		borderRadius: 40,
 		marginBottom: "5%",
 	},
 	container: {
