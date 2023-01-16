@@ -1,10 +1,7 @@
 import {
   View,
-  Text,
   TextInput,
-  TouchableHighlight,
   StyleSheet,
-  Alert,
 } from "react-native";
 import React from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -62,7 +59,8 @@ const RedEvat = () => {
     </KeyboardAwareScrollView>
   );
 };
-styles = StyleSheet.create({
+
+const styles = StyleSheet.create({
   container: {
     shadowOpacity: 0.3,
     shadowRadius: 4,
@@ -90,7 +88,6 @@ styles = StyleSheet.create({
     textAlign: "center",
     flexDirection: "row",
     flexWrap: "wrap",
-    flexDirection: "row",
     justifyContent: "space-between",
   },
 });

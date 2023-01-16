@@ -3,8 +3,6 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  Text,
-  TouchableOpacity,
   Alert,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
@@ -81,27 +79,27 @@ const LoginPage = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  input: {
-    borderColor: "gray",
-    width: "80%",
-    borderWidth: 2,
-    padding: 15,
-    margin: 10,
-    borderRadius: 8,
-  },
+	input: {
+		borderColor: "gray",
+		width: "80%",
+		borderWidth: 2,
+		padding: 15,
+		margin: 10,
+		borderRadius: 8,
+	},
 
-  image: {
-    width: "40%",
-    height: "35%",
-    borderRadius: 40,
-    marginBottom: "5%",
-  },
-  container: {
-    justifyContent: "center",
-    margin: "auto",
-    alignItems: "center",
-    marginTop: "45%",
-  },
+	image: {
+		width: "40%",
+		height: "35%",
+		borderRadius: 40,
+		marginBottom: "5%",
+	},
+	container: {
+		justifyContent: "center",
+		margin: "auto",
+		alignItems: "center",
+		marginTop: "45%",
+	},
 });
 
 LoginPage.propTypes = propTypes;

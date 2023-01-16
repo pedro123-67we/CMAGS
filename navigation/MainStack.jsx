@@ -4,21 +4,14 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 //Screens
-import NursePage from "../page/NursePage";
 import Home from "../page/Home";
 import Settings from "../page/Settings";
 import PatientRegister from "../page/PatientRegisterPage";
 import RedEvat from "../page/RedEvat";
 import LoginPage from "../page/LoginPage";
+import DailyForm from "../page/DailyForm";
 
 const Stack = createNativeStackNavigator();
-function StackNavigate() {
-  return (
-    <Stack.Navigator initialRouteName="LoginPage">
-      <Stack.Screen name="LoginPage" component={LoginPage} />
-    </Stack.Navigator>
-  );
-}
 const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
@@ -42,7 +35,7 @@ function MyTabs() {
         component={Home}
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="home-circle-outline"
               size={30}
@@ -56,7 +49,7 @@ function MyTabs() {
         component={PatientRegister}
         options={{
           tabBarLabel: "Registro Empleados",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="form-select"
               size={30}
@@ -70,7 +63,7 @@ function MyTabs() {
         component={RedEvat}
         options={{
           tabBarLabel: "Red Evat",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" size={30} color={color} />
           ),
         }}
@@ -80,7 +73,21 @@ function MyTabs() {
         component={Settings}
         options={{
           tabBarLabel: "Ajustes",
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="account-cog"
+              size={30}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="DailyForm"
+        component={DailyForm}
+        options={{
+          tabBarLabel: "Ajustes",
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="account-cog"
               size={30}
