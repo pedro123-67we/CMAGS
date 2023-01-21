@@ -51,5 +51,16 @@
       "prettier --write",
       "eslint --fix"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isakk7/EVAT_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isakk7/EVAT_frontend/issues"
+  },
+  "homepage": "https://github.com/isakk7/EVAT_frontend#readme",
+  "description": ""
 }
