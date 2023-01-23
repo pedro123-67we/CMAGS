@@ -32,10 +32,6 @@ const Forms = () => {
                         Alert.alert('Agregado Correctamente')
                     },
                 },
-                {
-                    text: 'No',
-                    onPress: () => Alert.alert('No agregar'),
-                },
             ])
         } catch (err) {
             console.log(err)

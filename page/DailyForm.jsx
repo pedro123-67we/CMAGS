@@ -59,7 +59,7 @@ const DailyForm = () => {
         } catch (err) {
             console.log(err)
         }
-        //cleanForm();
+        cleanForm();
     }
     return (
         <KeyboardAwareScrollView>

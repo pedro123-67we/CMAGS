@@ -21,10 +21,8 @@ const LoginPage = ({ navigation }) => {
     const { control, handleSubmit } = useForm()
     const { loginRequest } = useFetch()
     const onSubmit = async data => {
-        console.log(data)
         try {
-            console.log(await loginRequest(data))
-            console.log('te has logeado')
+            await loginRequest(data)
             navigation.navigate('Home')
         } catch (err) {
             Alert.alert(err.message)
