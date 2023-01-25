@@ -19,7 +19,6 @@ const DailyForm = () => {
 	const [ selectedValue, setSelectedValue] = useState("36");
 	const { postEvatForm } = useFetch();
 	const { heartRateTable, breathingRateTable, resultRateLevel } = EvatAlgorithm;
-	console.log(watch("FC"))
 
 	const cleanForm = () => {
 		setValue("hour", "");
@@ -41,7 +40,6 @@ const DailyForm = () => {
 	};
 
 	const onSubmit = async data => {
-		console.log(data, selectedValue);
 		try {
 			Alert.alert("Formulario llenado", "", [
 				{
@@ -57,7 +55,6 @@ const DailyForm = () => {
 		cleanForm();
 	};
     useEffect(()=>{
-        console.log(control._fields.resp,watch("resp"))
         setValue(
             "resp",
             resultRateLevel(15, parseInt(watch("FR")) || 0, breathingRateTable)
@@ -65,7 +62,6 @@ const DailyForm = () => {
     },[watch("FR")])
 
     useEffect(()=>{
-        console.log(control._fields.resp,watch("cardio"))
         setValue(
             "cardio",
             resultRateLevel(15, parseInt(watch("FC")) || 0, breathingRateTable)
@@ -287,7 +283,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Preocupacion enfermera"
+							placeholder="Preocupación enfermera"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -304,7 +300,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Preocupacion familia"
+							placeholder="Preocupación familia"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
