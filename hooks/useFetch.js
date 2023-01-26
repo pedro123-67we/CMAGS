@@ -36,18 +36,15 @@ const useFetch = () => {
             throw new Error(err.response.data.msg)
         }
     }
-
-    const postEvatForm = async info => {
+    const postEvatForm =(async(info)=>{
         try {
-            const { data } = await axios.post(Requests.DAILY_FORM_REQUEST, {
-                ...info,
-            })
-            return data.result
+            const {data} = await axios.post(Requests.DAILY_FORM_REQUEST, {...info});
+            return data.result;
         } catch (err) {
-            const message = err?.response?.data.msg || 'somenthing went wrong'
-            throw new Error(message)
+            const message = err?.response?.data.msg || "somenthing went wrong";
+            throw new Error(message);
         }
-    }
+      });
 
     const redEvatpost = async info => {
         await axios.post(Requests.RED_EVAT_REQUEST, { ...info })
@@ -59,7 +56,7 @@ const useFetch = () => {
         }
     }
 
-    return { patientRequest, loginRequest, postEvatForm }
+    return { patientRequest, loginRequest, postEvatForm, redEvatpost}
 }
 
 export default useFetch
