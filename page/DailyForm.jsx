@@ -56,6 +56,7 @@ const DailyForm = () => {
                     },
                 },
             ])
+            navigation.navigate('Home')
         } catch (err) {
             console.log(err)
         }

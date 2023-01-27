@@ -4,8 +4,9 @@ import {
     StyleSheet,
     TouchableOpacity,
     Text,
+    Alert
 } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import useFetch from '../hooks/useFetch'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -16,7 +17,7 @@ const RedEvat = () => {
     const cleanForm = () => {
         setValue('namePatient', '')
         setValue('age', '')
-        setValue('typeofcancer', '')
+        setValue('dxOncologico', '')
         setValue('paliative', '')
         setValue('service', '')
         setValue('month', '')
@@ -38,7 +39,7 @@ const RedEvat = () => {
         setValue('dateEvent', '')
         setValue('timeEvent', '')
         setValue('traslado', '')
-        setValue('timetraslado', '')
+        setValue('datetraslado', '')
         setValue('timetraslado', '')
         setValue('estancia', '')
         setValue('floor', '')
@@ -48,108 +49,521 @@ const RedEvat = () => {
     const { redEvatpost } = useFetch()
 
     const onSubmit = async data => {
-        console.log(data, selectedValue)
+        try {
+            Alert.alert('Formulario Completado', '', [
+                {
+                    text: 'Si',
+                    onPress: async () => {
+                        await redEvatpost(data)
+                        Alert.alert('Agregado Correctamente')
+                        console.log(data)
+                    },
+                },
+            ])
+        } catch (err) {
+            console.log(err)
+        }
+        cleanForm()
     }
 
     return (
         <KeyboardAwareScrollView>
             <View style={styles.container}>
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Nombre del paciente"
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Nombre del paciente"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="namePatient"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Fecha de Nacimiento"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Fecha de Nacimiento"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="age"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Dx oncológico"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Dx oncológico"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="dxOncologico"
                 />
-                <TextInput style={styles.inputRed} placeholder="Paliativo" />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Servicio/Unidad"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Paliativo"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="paliative"
                 />
-                <TextInput style={styles.inputRed} placeholder="Mes" />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Fecha Primer EVAT rojo"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Servicio/Unidad"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="service"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Hora Primer EVAT rojo"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput 
+                            style={styles.inputRed} 
+                            placeholder="Mes" 
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="month"
                 />
-                <TextInput style={styles.inputRed} placeholder="CN" />
-                <TextInput style={styles.inputRed} placeholder="CV" />
-                <TextInput style={styles.inputRed} placeholder="R" />
-                <TextInput style={styles.inputRed} placeholder="PE" />
-                <TextInput style={styles.inputRed} placeholder="Total EVAT" />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Consulta a UCI"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Fecha Primer EVAT rojo"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="datefirstevat"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Hora de consulta"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Hora Primer EVAT rojo"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="timefirstevat"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Intervención?(UCI o Pedi)"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput 
+                            style={styles.inputRed} 
+                            placeholder="CN" 
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="cn"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Hora de intervención"
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput 
+                            style={styles.inputRed} 
+                            placeholder="CV" 
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="cv"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Tipo de intervención"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput 
+                            style={styles.inputRed} 
+                            placeholder="R"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="r"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Duración de EVAT rojo(Horas)"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput 
+                            style={styles.inputRed} 
+                            placeholder="PE" 
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                            />
+                    )}
+                    name="pe"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Evento de deterioro"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Total EVAT"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="total"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Tipo de Evento"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Consulta a UCI"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="consultUci"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Fecha de Evento"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Hora de consulta"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="timeConsult"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Hora de Evento"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Intervención?(UCI o Pedi)"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="intervencion"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Traslado a UCI/UTI"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Hora de intervención"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="timeIntervencion"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Fecha de traslado"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Tipo de intervención"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="typeIntervencion"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Hora de Traslado"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Duración de EVAT rojo(Horas)"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="duracionEVAT"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Estancia UCI/UTI"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Evento de deterioro"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="event"
                 />
-                <TextInput
-                    style={styles.inputRed}
-                    placeholder="Mortalidad de UCI o piso"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Tipo de Evento"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="typeEvent"
                 />
-                <TextInput
-                    style={styles.inputComment}
-                    placeholder="Escriba un Comentario"
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Fecha de Evento"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="dateEvent"
                 />
-                <TouchableOpacity style={styles.btnSave}>
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Hora de Evento"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="timeEvent"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Traslado a UCI/UTI"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="traslado"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Fecha de traslado"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="datetraslado"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Hora de Traslado"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="timetraslado"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Estancia UCI/UTI"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="estancia"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Mortalidad de UCI o piso"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="floor"
+                />
+
+                <Controller
+                    control={control}
+                    rules={{
+                        required: true,
+                    }}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TextInput
+                            style={styles.inputComment}
+                            placeholder="Escriba un Comentario"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
+                    )}
+                    name="comment"
+                />
+                <TouchableOpacity
+                    style={styles.btnSave}
+                    onPress={handleSubmit(onSubmit)}
+                >
                     <Text style={styles.textBtn}>Guardar</Text>
                 </TouchableOpacity>
             </View>
@@ -159,19 +573,20 @@ const RedEvat = () => {
 
 const styles = StyleSheet.create({
     container: {
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.1,
         shadowRadius: 4,
+        borderWidth:1,
         padding: '4%',
-        elevation: 2,
+        elevation: 1,
         alignItems: 'center',
         justifyContent: 'center',
         width: '85%',
         margin: '8%',
-        borderRadius: 4,
+        borderRadius: 6,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
-            height: 4,
+            height: 6,
         },
     },
     inputRed: {
