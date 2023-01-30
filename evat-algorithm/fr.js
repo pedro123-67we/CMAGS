@@ -14,4 +14,4 @@ const breathingRateTable = [
     ['14-23', '24-26', '27-32', '>32'],
 ]
 
-export default breathingRateTable
+export default breathingRateTable;

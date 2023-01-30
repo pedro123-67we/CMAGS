@@ -14,4 +14,4 @@ const heartRateTable = [
     ['62-107', '108-115', '116-132', '>133'],
 ]
 
-export default heartRateTable
+export default heartRateTable;

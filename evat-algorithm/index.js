@@ -8,4 +8,4 @@ const EvatAlgorithm = {
     resultRateLevel,
 }
 
-export default EvatAlgorithm
+export default EvatAlgorithm;
