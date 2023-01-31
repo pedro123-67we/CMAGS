@@ -41,7 +41,7 @@ const useFetch = () => {
             const {data} = await axios.post(Requests.DAILY_FORM_REQUEST, {...info});
             return data.result;
         } catch (err) {
-            const message = err?.response?.data.msg || "somenthing went wrong";
+            const message = err?.response?.data.msg || "Algo salio mal";
             throw new Error(message);
         }
       });
