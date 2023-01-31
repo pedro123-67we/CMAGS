@@ -7,9 +7,14 @@ const Home = () => {
     const navigation = useNavigation()
     return (
         <View style={styles.cardContainer}>
-            <Text>nombre: Juan</Text>
-            <Text>edad: 13</Text>
-            <Text>Estado: Verde</Text>
+            <MaterialCommunityIcons
+                name="account-heart"
+                size={50}
+                color='green'
+            />
+            <Text style={styles.infText}>nombre: Juan</Text>
+            <Text style={styles.infText}>edad: 13</Text>
+            <Text style={styles.infText}>Estado: Verde</Text>
             <TouchableHighlight
                 style={styles.buttonForm}
                 onPress={() => navigation.navigate('DailyForm')}
@@ -27,10 +32,11 @@ const styles = StyleSheet.create({
         margin: 'auto',
         borderWidth: 1,
         width: '70%',
-        height: '20%',
+        height: '30%',
         borderRadius: 4,
         marginTop: '30%',
         marginLeft: '15%',
+        padding:1
     },
     buttonForm: {
         backgroundColor: 'green',
@@ -38,9 +44,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'green',
         borderRadius: 4,
+        margin: '6%',
+        padding:10
     },
     textStyle: {
         color: 'white',
+        fontSize:15
+    },
+    infText: {
+        fontSize:15,
+        marginTop:'1%'
     },
 })
 

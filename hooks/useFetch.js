@@ -47,11 +47,13 @@ const useFetch = () => {
       });
 
     const redEvatpost = async info => {
-        await axios.post(Requests.RED_EVAT_REQUEST, { ...info })
         try {
+            const { data } = await axios.post(Requests.RED_EVAT_REQUEST, {
+                ...info,
+            })
             return data.result
         } catch (err) {
-            const message = err?.response?.data.msg || 'Algo Salio mal'
+            const message = err?.response?.data.msg || 'somenthing went wrong'
             throw new Error(message)
         }
     }

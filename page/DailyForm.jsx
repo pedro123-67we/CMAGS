@@ -39,7 +39,6 @@ const DailyForm = () => {
 		setValue("nurseConcern", "");
 		setValue("familyConcern", "");
 	};
-
 	const onSubmit = async data => {
 		try {
 			Alert.alert("Formulario llenado", "", [
@@ -55,7 +54,7 @@ const DailyForm = () => {
 		}
 		cleanForm();
 	};
-
+  
     useEffect(()=>{
         setValue(
             "resp",
