@@ -39,7 +39,7 @@ const MyTabs = () => {
                     tabBarLabel: 'Red Evat',
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
-                            name="home"
+                            name="clipboard-edit-outline"
                             size={30}
                             color={color}
                         />

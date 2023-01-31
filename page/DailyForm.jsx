@@ -54,6 +54,7 @@ const DailyForm = () => {
 		}
 		cleanForm();
 	};
+	
     useEffect(()=>{
         setValue(
             "resp",
