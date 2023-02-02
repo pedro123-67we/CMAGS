@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const PatientInformation = () => {
     return (
-        
+        <KeyboardAwareScrollView>
         <View>
             <Text style = { styles.labelTittle }>Informacion del Paciente:</Text>
             <View style = { styles.lineStyle } />
@@ -22,9 +23,11 @@ const PatientInformation = () => {
             <Text style = { styles.labelSubTittle } >Enfermera:</Text>
             <Text style = { styles.patientInfo }>Erika Valverde</Text>
             <View style = { styles.lineStyle } />
+            
         </View>
+        </KeyboardAwareScrollView>
     )
-}
+};
 
 styles = StyleSheet.create({
     labelTittle:{
@@ -51,4 +54,4 @@ styles = StyleSheet.create({
     }
 });
 
-export default PatientInformation
+export default PatientInformation;

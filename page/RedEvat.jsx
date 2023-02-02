@@ -570,20 +570,19 @@ const RedEvat = () => {
                     style={styles.btnSave}
                     onPress={handleSubmit(onSubmit)}
                 >
-                    <Text>Guardar</Text>
+                    <Text style={styles.textBtn}>Guardar</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAwareScrollView>
     )
 }
 styles = StyleSheet.create({
-    
+
     container: {
         borderWidth: 1,
         padding: '5%',
         alignItems: 'center',
         justifyContent: 'center',
-        alignItems: 'center',
         width: '85%',
         margin: '8%',
         backgroundColor: 'white',
@@ -603,7 +602,8 @@ styles = StyleSheet.create({
         margin: '1%',
         borderRadius: 8,
         marginTop: '5%',
-        alingnText: 'center',
+        justifyContent:'center',
+        alignItems:'center'
     },
     inputComment: {
         width: '80%',
@@ -621,10 +621,11 @@ styles = StyleSheet.create({
         borderRadius: 8,
         marginTop: '4%',
         fontSize: 20,
+        justifyContent:'center'
     },
     textBtn: {
         color: '#fff'
-    },
+    }
 });
 
 export default RedEvat;
