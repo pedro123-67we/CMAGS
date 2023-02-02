@@ -141,6 +141,9 @@ const PatientRegisterPage = () => {
     )
 }
 
+export default PatientRegisterPage;
+
+
 const styles = StyleSheet.create({
     input: {
         borderColor: 'gray',
@@ -170,5 +173,3 @@ const styles = StyleSheet.create({
         borderRadius: 15,
     },
 })
-
-export default PatientRegisterPage

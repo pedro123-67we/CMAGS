@@ -1,17 +1,22 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import React from 'react'
 //Screens
 import Home from '../page/Home'
 import Settings from '../page/Settings'
 import RedEvat from '../page/RedEvat'
 
+//const Tab = createMaterialBottomTabNavigator();
 const Tab = createBottomTabNavigator()
 
 const MyTabs = () => {
     return (
         <Tab.Navigator
-            initialRouteName="Home"
+        initialRouteName="Home"
+        activeColor="#f0edf6"
+        inactiveColor="#3e2465"
+        barStyle={{ paddingBottom: 30 }}
             screenOptions={{
                 tabBarActiveTintColor: 'white',
                 tabBarActiveBackgroundColor: 'black',

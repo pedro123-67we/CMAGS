@@ -20,7 +20,7 @@ const RedEvat = () => {
         setValue('Ocologicdx', '')
         setValue('Palliative', '')
         setValue('Service/unit', '')
-        setValue ('Month', '')
+        setValue('Month', '')
         setValue('DateFirstEVARed', '')
         setValue('TimeFirstRedEVAT', '')
         setValue('CN', '')
@@ -58,6 +58,7 @@ const RedEvat = () => {
                     },
                     style: 'Agregado',
                 },
+
                 {
                     text: 'No',
                     onPress: () => Alert.alert('No agregar'),
@@ -163,12 +164,12 @@ const RedEvat = () => {
                         required: true,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput 
-                          style={styles.inputRed} 
-                          placeholder="Mes" 
-                          onBlur={onBlur}
-                          onChangeText={onChange}
-                          value={value}
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="Mes"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
                         />
                     )}
                     name="Month"
@@ -214,12 +215,12 @@ const RedEvat = () => {
                         required: true,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput 
-                          style={styles.inputRed} 
-                          placeholder="CN" 
-                          onBlur={onBlur}
-                          onChangeText={onChange}
-                          value={value}
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="CN"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
                         />
                     )}
                     name="CN"
@@ -231,12 +232,12 @@ const RedEvat = () => {
                         required: true,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput 
-                          style={styles.inputRed} 
-                          placeholder="CV"
-                          onBlur={onBlur}
-                          onChangeText={onChange}
-                          value={value} 
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="CV"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
                         />
                     )}
                     name="CV"
@@ -248,13 +249,13 @@ const RedEvat = () => {
                         required: true,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput 
-                          style={styles.inputRed} 
-                          placeholder="R" 
-                          onBlur={onBlur}
-                          onChangeText={onChange}
-                          value={value}
-                      />
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="R"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
+                        />
                     )}
                     name="R"
                 />
@@ -265,12 +266,12 @@ const RedEvat = () => {
                         required: true,
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
-                        <TextInput 
-                          style={styles.inputRed} 
-                          placeholder="PE"
-                          onBlur={onBlur}
-                          onChangeText={onChange}
-                          value={value} 
+                        <TextInput
+                            style={styles.inputRed}
+                            placeholder="PE"
+                            onBlur={onBlur}
+                            onChangeText={onChange}
+                            value={value}
                         />
                     )}
                     name="PE"
@@ -565,9 +566,9 @@ const RedEvat = () => {
                     name="Comment"
                 />
 
-                <TouchableOpacity 
-                  style={styles.btnSave}
-                  onPress={handleSubmit(onSubmit)}
+                <TouchableOpacity
+                    style={styles.btnSave}
+                    onPress={handleSubmit(onSubmit)}
                 >
                     <Text>Guardar</Text>
                 </TouchableOpacity>
@@ -576,6 +577,7 @@ const RedEvat = () => {
     )
 }
 styles = StyleSheet.create({
+    
     container: {
         borderWidth: 1,
         padding: '5%',
@@ -620,6 +622,9 @@ styles = StyleSheet.create({
         marginTop: '4%',
         fontSize: 20,
     },
-})
+    textBtn: {
+        color: '#fff'
+    },
+});
 
-export default RedEvat
+export default RedEvat;

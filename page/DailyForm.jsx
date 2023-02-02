@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import React, { useEffect, useState } from "react";
+import { useNavigation } from '@react-navigation/native'
 import { useForm, Controller } from "react-hook-form";
 import useFetch from "../hooks/useFetch";
 import { Picker } from "@react-native-picker/picker";
@@ -16,6 +17,7 @@ import { heartRateTable, breathingRateTable, resultRateLevel } from "../evat-alg
 const COLORS = ["#F7F7F7", "#7DCE13", "#EAE509", "#F76767"]
 
 const DailyForm = () => {
+	const navigation = useNavigation()
 	const { control, handleSubmit, setValue, watch } = useForm();
 	const [ selectedValue, setSelectedValue] = useState("Temperatura")
 	const { postEvatForm } = useFetch();
@@ -48,6 +50,7 @@ const DailyForm = () => {
 					}
 				}
 			]);
+			navigation.navigate("Home")
 		} catch (err) {
 			console.log(err);
 		}
