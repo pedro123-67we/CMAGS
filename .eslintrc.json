@@ -26,12 +26,11 @@
             "tab"
         ],
         "linebreak-style": [
-            "error",
-            "windows"
+            "error"
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
