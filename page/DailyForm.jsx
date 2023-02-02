@@ -12,14 +12,14 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import useFetch from "../hooks/useFetch";
 import { Picker } from "@react-native-picker/picker";
-import EvatAlgorithm from "../evat-algorithm";
+import { heartRateTable, breathingRateTable, resultRateLevel } from "../evat-algorithm";
+const COLORS = ["#F7F7F7", "#7DCE13", "#EAE509", "#F76767"]
 
 const DailyForm = () => {
 	const { control, handleSubmit, setValue, watch } = useForm();
-	const [ selectedValue, setSelectedValue] = useState("36");
+	const [ selectedValue, setSelectedValue] = useState("Temperatura")
 	const { postEvatForm } = useFetch();
-	const { heartRateTable, breathingRateTable, resultRateLevel } = EvatAlgorithm;
-
+	
 	const cleanForm = () => {
 		setValue("hour", "");
 		setValue("temperature", "");
@@ -38,7 +38,6 @@ const DailyForm = () => {
 		setValue("nurseConcern", "");
 		setValue("familyConcern", "");
 	};
-
 	const onSubmit = async data => {
 		try {
 			Alert.alert("Formulario llenado", "", [
@@ -54,21 +53,21 @@ const DailyForm = () => {
 		}
 		cleanForm();
 	};
-	
+  
     useEffect(()=>{
         setValue(
             "resp",
-            resultRateLevel(15, parseInt(watch("FR")) || 0, breathingRateTable)
+			resultRateLevel(15, parseInt(watch("FR")) || 0, breathingRateTable)
           );
     },[watch("FR")])
-
+	
     useEffect(()=>{
         setValue(
             "cardio",
-            resultRateLevel(15, parseInt(watch("FC")) || 0, breathingRateTable)
+            resultRateLevel(15, parseInt(watch("FC")) || 0, heartRateTable)
           );
     },[watch("FC")])
-
+	
 	return (
 		<KeyboardAwareScrollView enableResetScrollToCoords={false}>
 			<SafeAreaView style={styles.container}>
@@ -129,8 +128,9 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
+							maxLength={3}
 							placeholder="Frecuencia cardiaca"
-							style={styles.input}
+							style={styles.evat(watch,"FC", heartRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}
 							value={value}
@@ -146,8 +146,9 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
+							maxLength={3}
 							placeholder="Frecuencia respiratoria"
-							style={styles.input}
+							style={styles.evat(watch,"FR", breathingRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}
 							value={value}
@@ -272,11 +273,12 @@ const DailyForm = () => {
 					)}
 					name="neuro"
 				/>
-				 <Text style={styles.text}>Cardio:{resultRateLevel(15, parseInt(watch("FC"))|| 0, heartRateTable)}</Text>
+				
+				 <Text style={styles.evat(watch,"FC", heartRateTable )}>Cardio:{resultRateLevel(15, parseInt(watch("FC"))|| 0, heartRateTable)}</Text>
 
-                 <Text style={styles.text}>Respiratorio:{resultRateLevel(15, parseInt(watch("FR"))|| 0, heartRateTable)}</Text>
+                 <Text style={styles.evat(watch,"FR", breathingRateTable)}>Respiratorio:{resultRateLevel(15, parseInt(watch("FR"))|| 0, breathingRateTable)}</Text>
                  
-				<Controller
+				 <Controller
 					control={control}
 					rules={{
 						required: true,
@@ -376,7 +378,16 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		padding: 15,
 		margin: 20,
-        }
+        },
+		evat: (watch, field, fn) => ({
+			backgroundColor:COLORS[resultRateLevel(15, parseInt(watch(field)) || 0, fn)],
+			borderColor: "gray",
+			width: "80%",
+			borderWidth: 1,
+			borderRadius: 10,
+			padding: 15,
+			margin: 20
+		})
 });
 
 export default DailyForm;
