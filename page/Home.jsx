@@ -1,11 +1,13 @@
 import { View, StyleSheet, Text, TouchableHighlight } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import React from 'react'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
     const navigation = useNavigation()
     return (
+        <KeyboardAwareScrollView>
         <View style={styles.cardContainer}>
             <MaterialCommunityIcons
                 name="account-heart"
@@ -23,6 +25,7 @@ const Home = () => {
                 <Text style={styles.textStyle}>Formulario Diario</Text>
             </TouchableHighlight>
         </View>
+        </KeyboardAwareScrollView>
     )
 }
 

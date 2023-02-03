@@ -56,6 +56,23 @@ const DailyForm = () => {
 		}
 		cleanForm();
 	};
+
+	const onNotification = async data => {
+		try {
+			Alert.alert("Formulario llenado", "", [
+				{
+					text: "Ok",
+					onPress: async () => {
+						await postEvatForm({ ...data, temperature: selectedValue, idPatient: "638a2906ab6e8d284d203e22" });
+					}
+				}
+			]);
+			navigation.navigate("Notifications")
+		} catch (err) {
+			console.log(err);
+		}
+		cleanForm();
+	};
   
     useEffect(()=>{
         setValue(
@@ -319,6 +336,9 @@ const DailyForm = () => {
 				<TouchableOpacity style={styles.buttonContainer} onPress={handleSubmit(onSubmit)}>
 					<Text style={styles.ButtonText}>Guardar</Text>
 				</TouchableOpacity>
+				<TouchableOpacity style={styles.buttonNotification} onPress={() => navigation.navigate('Notifications')}>
+					<Text style={styles.texNotification}>Notificar</Text>
+				</TouchableOpacity>
 			</SafeAreaView>
 		</KeyboardAwareScrollView>
 	);
@@ -382,6 +402,20 @@ const styles = StyleSheet.create({
 		padding: 15,
 		margin: 20,
         },
+		buttonNotification: {
+			backgroundColor: "#F8F988",
+			marginBottom: "5%",
+			marginTop: "5%",
+				paddingHorizontal: 50,
+				paddingVertical: 10,
+				alignItems: "center",
+				borderRadius: 8,
+				width: "80%",
+		},
+		texNotification: {
+			color: "#ffffff",
+			borderRadius: 10,
+		},
 		evat: (watch, field, fn) => ({
 			backgroundColor:COLORS[resultRateLevel(15, parseInt(watch(field)) || 0, fn)],
 			borderColor: "gray",
