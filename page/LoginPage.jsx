@@ -3,32 +3,23 @@ import {
     StyleSheet,
     Image,
     TextInput,
-    Alert,
     TouchableOpacity,
     Text,
 } from 'react-native'
 import { useForm, Controller } from 'react-hook-form'
 import React from 'react'
 import { object } from 'prop-types'
-import useFetch from '../hooks/useFetch'
+import useAuthService from '../hooks/useAuthService'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const propTypes = {
     navigation: object,
 }
 
-const LoginPage = ({ navigation }) => {
+const LoginPage = () => {
     const { control, handleSubmit } = useForm()
-    const { loginRequest } = useFetch()
-    const onSubmit = async data => {
-        try {
-            await loginRequest(data)
-            navigation.navigate('Home')
-        } catch (err) {
-            Alert.alert(err.message)
-        }
-    }
-
+    const { signIn } = useAuthService()
+    
     return (
         <KeyboardAwareScrollView>
             <View style={styles.container}>
@@ -47,7 +38,7 @@ const LoginPage = ({ navigation }) => {
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
-                            placeholder="Ingresa tu usuario"
+                            placeholder="Enter your username"
                         />
                     )}
                     name="email"
@@ -65,16 +56,16 @@ const LoginPage = ({ navigation }) => {
                             value={value}
                             secureTextEntry={true}
                             required={true}
-                            placeholder="Ingresa tu contraseña"
+                            placeholder="Enter your password"
                         />
                     )}
                     name="password"
                 />
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={handleSubmit(onSubmit)}
+                    onPress={handleSubmit((data)=> signIn(data.email, data.password))}
                 >
-                    <Text style={styles.ButtonText}>Ingresar</Text>
+                    <Text style={styles.ButtonText}>Enter</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAwareScrollView>
