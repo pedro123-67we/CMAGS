@@ -129,7 +129,7 @@ const DailyForm = () => {
 						<TextInput
 							keyboardType="numeric"
 							maxLength={3}
-							placeholder="Cardiac frequency"
+							placeholder="Heart rate"
 							style={styles.evat(watch,"FC", heartRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -147,7 +147,7 @@ const DailyForm = () => {
 						<TextInput
 							keyboardType="numeric"
 							maxLength={3}
-							placeholder="Respiratory rate"
+							placeholder="Breathing rate"
 							style={styles.evat(watch,"FR", breathingRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}

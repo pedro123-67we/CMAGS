@@ -65,7 +65,7 @@ const LoginPage = () => {
                     style={styles.buttonContainer}
                     onPress={handleSubmit((data)=> signIn(data.email, data.password))}
                 >
-                    <Text style={styles.ButtonText}>Enter</Text>
+                    <Text style={styles.ButtonText}>Sign in</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAwareScrollView>

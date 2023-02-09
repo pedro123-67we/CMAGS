@@ -114,7 +114,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Oncologic Dx"
+                            placeholder="Oncological Dx"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -182,7 +182,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Date First red EVAT"
+                            placeholder="First red EVAT date"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -199,7 +199,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Time first red EVAT"
+                            placeholder="First red EVAT hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -318,7 +318,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Consultation time"
+                            placeholder="Consultation hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -352,7 +352,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Intervention time"
+                            placeholder="Intervention hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -386,7 +386,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Red EVAT duration"
+                            placeholder="Red EVAT duration (hours)"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -454,7 +454,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Event time"
+                            placeholder="Event hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -505,7 +505,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Transfer time"
+                            placeholder="Transfer hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
