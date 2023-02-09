@@ -12,10 +12,10 @@ import useAuthService from '../hooks/useAuthService'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
-
 const LoginPage = () => {
     const { control, handleSubmit } = useForm()
-    const { signIn } = useAuthService();
+    const { signIn } = useAuthService()
+    
     return (
         <KeyboardAwareScrollView>
             <View style={styles.container}>
@@ -34,7 +34,7 @@ const LoginPage = () => {
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
-                            placeholder="Ingresa tu usuario"
+                            placeholder="Enter your username"
                         />
                     )}
                     name="email"
@@ -52,16 +52,16 @@ const LoginPage = () => {
                             value={value}
                             secureTextEntry={true}
                             required={true}
-                            placeholder="Ingresa tu contraseña"
+                            placeholder="Enter your password"
                         />
                     )}
                     name="password"
                 />
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={handleSubmit((data) => signIn(data.email, data.password))}
+                    onPress={handleSubmit((data)=> signIn(data.email, data.password))}
                 >
-                    <Text style={styles.ButtonText}>Entrar</Text>
+                    <Text style={styles.ButtonText}>Sign in</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAwareScrollView>

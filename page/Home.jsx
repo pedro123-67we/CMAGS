@@ -19,14 +19,14 @@ const Home = () => {
                 color='green'
                 onPress={() => navigation.navigate("PatientInformation") }
             />
-            <Text style={styles.infText}>nombre: Juan</Text>
-            <Text style={styles.infText}>edad: 13</Text>
-            <Text style={styles.infText}>Estado: Verde</Text>
+            <Text style={styles.infText}>Name: Juan</Text>
+            <Text style={styles.infText}>Age: 13</Text>
+            <Text style={styles.infText}>Status: Verde</Text>
             <TouchableHighlight
                 style={styles.buttonForm}
                 onPress={() => navigation.navigate('DailyForm')}
             >
-                <Text style={styles.textStyle}>Formulario Diario</Text>
+                <Text style={styles.textStyle}>Daily form</Text>
             </TouchableHighlight>
         </View>
     )
