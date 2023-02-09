@@ -29,7 +29,7 @@ const PatientInformation = () => {
     )
 };
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     labelTittle:{
         fontSize: 20,
         fontWeight:'bold',

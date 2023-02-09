@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
 import MyTabs from '../navigation/MainStack'
 import LoginPage from '../page/LoginPage'
-import Home from '../page/Home'
 import DailyForm from '../page/DailyForm'
 import Notifications from '../page/NotificationForm'
 import PatientInformation from '../page/PatientInformation'
@@ -24,7 +23,7 @@ const Navigation = () => {
                     component={MyTabs}
                 options={{ headerShown: false }}    
                 />
-                <Stack.Screen name="DailyForm" component={DailyForm} />
+                <Stack.Screen name="DailyForm" component={DailyForm} /> 
                 <Stack.Screen name="Notifications" component={Notifications}  />
                 <Stack.Screen name="PatientInformation" component={PatientInformation}  />
             </Stack.Navigator>

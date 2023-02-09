@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 
 const Settings = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
     return (
         <View>

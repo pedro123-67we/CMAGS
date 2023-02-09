@@ -23,7 +23,7 @@ const DailyForm = () => {
 	const { postEvatForm } = useFetch();
 	
 	const cleanForm = () => {
-		setValue("hour", "");
+		setValue( "hour" , "" );
 		setValue("temperature", "");
 		setValue("bloodPressure", "");
 		setValue("FC", "");
@@ -52,7 +52,7 @@ const DailyForm = () => {
 			]);
 			navigation.navigate("Home")
 		} catch (err) {
-			console.log(err);
+			Alert.alert(err.message);
 		}
 		cleanForm();
 	};

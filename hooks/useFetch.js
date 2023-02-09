@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import Requests from "../constants/requests";
 import useErrorHandler from "./useErrorHandler";
 
@@ -130,6 +130,12 @@ const useFetch = () => {
     return data.result;
   });
 
+  //POST request to register RedEvat form
+  const postRedEvatForm = funcErrorWrapper(async info =>{
+    const { data } = await axios.post(Requests.RED_EVAT_REQUEST, { ...info });
+    return data.result;
+  });
+
   // POST request to create notification
   const postNotification = funcErrorWrapper(async info => {
     const { data } = await axios.post(Requests.NOTIFICATION_REQUEST, {
@@ -236,6 +242,7 @@ const useFetch = () => {
     getEmployeeById,
     getAllPatientsNurse,
     postEvatForm,
+    postRedEvatForm,
     getDoctors,
     postNotification,
     patientNotifications,

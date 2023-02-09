@@ -11,6 +11,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { useForm, Controller } from 'react-hook-form'
 import useFetch from '../hooks/useFetch'
 
+
 const RedEvat = () => {
     const { control, handleSubmit, setValue } = useForm()
 
@@ -45,7 +46,7 @@ const RedEvat = () => {
         setValue('Mortality', '')
         setValue('Comment', '')
     }
-    const { redEvatpost } = useFetch()
+    const { postRedEvatForm } = useFetch()
 
     const onSubmit = async data => {
         try {
@@ -53,7 +54,7 @@ const RedEvat = () => {
                 {
                     text: 'Si',
                     onPress: async () => {
-                        await redEvatpost(data)
+                        await postRedEvatForm(data)
                         Alert.alert('Guardato Correctamente')
                     },
                     style: 'Agregado',
@@ -66,10 +67,11 @@ const RedEvat = () => {
                 },
             ])
         } catch (err) {
-            console.log(err)
+            Alert.alert(err.message)
         }
-        cleanForm()
+        cleanForm();
     }
+    
     return (
         <KeyboardAwareScrollView>
             <View style={styles.container}>
@@ -575,8 +577,8 @@ const RedEvat = () => {
             </View>
         </KeyboardAwareScrollView>
     )
-}
-styles = StyleSheet.create({
+};
+const styles = StyleSheet.create({
 
     container: {
         borderWidth: 1,
@@ -603,7 +605,9 @@ styles = StyleSheet.create({
         borderRadius: 8,
         marginTop: '5%',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        justifyContent:'center',
+        padding:"3%"
     },
     inputComment: {
         width: '80%',

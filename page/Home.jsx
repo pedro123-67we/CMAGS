@@ -3,12 +3,16 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import React from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useNavigation } from '@react-navigation/native'
+import  useFetchDataById  from '../hooks/useFetchDataById'
+import useFetch from '../hooks/useFetch'
 
 const Home = () => {
+    const { getAllPatientsNurse } = useFetch();
+    const { data } = useFetchDataById(getAllPatientsNurse,"63b1f362e650d1d3e3dfe5ae")
     const navigation = useNavigation()
+    console.log(data)
     return (
-        <KeyboardAwareScrollView>
-        <View style={styles.cardContainer}>
+            <View style={styles.cardContainer}>
             <MaterialCommunityIcons
                 name="account-heart"
                 size={50}
@@ -25,7 +29,6 @@ const Home = () => {
                 <Text style={styles.textStyle}>Formulario Diario</Text>
             </TouchableHighlight>
         </View>
-        </KeyboardAwareScrollView>
     )
 }
 
@@ -34,13 +37,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 'auto',
-        elevation: 5,
         width: '70%',
         height: '30%',
         borderRadius: 4,
-        marginTop: '10%',
+        marginTop: '30%',
         marginLeft: '15%',
         padding:1,
+        elevation: 8,
+        backgroundColor: 'white'
     },
     buttonForm: {
         backgroundColor: 'green',

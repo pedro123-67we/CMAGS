@@ -1,9 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import React from 'react'
 //Screens
-import Home from '../page/Home'
+import Home1 from '../page/Home'
 import Settings from '../page/Settings'
 import RedEvat from '../page/RedEvat'
 
@@ -24,10 +23,11 @@ const MyTabs = () => {
             }}
         >
             <Tab.Screen
-                name="Home"
-                component={Home}
+                name="Home1"
+                component={Home1}
                 options={{
                     tabBarLabel: 'Home',
+                    headerShown: false,
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons
                             name="home-circle-outline"

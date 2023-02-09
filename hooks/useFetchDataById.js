@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 const useFetchDataById = (fetchFunction, id) => {
   const [data, setData] = useState([]);
-
   useEffect(() => {
     fetchFunction(id)
       .then(result => setData(result))
