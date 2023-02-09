@@ -93,8 +93,8 @@ export default function App() {
                     Body: {notification && notification.request.content.body}
                 </Text>
 
-                <TextInput placeholder="Ingresa titulo de notificación:"/>
-                <TextInput placeholder="Ingresa una breve descripción:" />
+                <TextInput placeholder="Enter notification title:"/>
+                <TextInput placeholder="Enter a brief description:" />
             </View>
             <Button
                 title="Send Notification"

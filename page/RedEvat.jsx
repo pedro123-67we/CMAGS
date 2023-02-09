@@ -49,19 +49,19 @@ const RedEvat = () => {
 
     const onSubmit = async data => {
         try {
-            Alert.alert('Agregar Paciente?', '', [
+            Alert.alert('Add patient?', '', [
                 {
-                    text: 'Si',
+                    text: 'Yes',
                     onPress: async () => {
                         await redEvatpost(data)
-                        Alert.alert('Guardato Correctamente')
+                        Alert.alert('saved correctly')
                     },
-                    style: 'Agregado',
+                    style: 'Added',
                 },
                 {
                     text: 'No',
-                    onPress: () => Alert.alert('No agregar'),
-                    style: 'No Agregado',
+                    onPress: () => Alert.alert('Not add'),
+                    style: 'Not added',
                 },
             ])
         } catch (err) {
@@ -80,7 +80,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Nombre del paciente"
+                            placeholder="Patient name"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -97,7 +97,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Fecha de Nacimiento"
+                            placeholder="Birth Date"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -114,7 +114,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Dx Oncològico"
+                            placeholder="Oncological Dx"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -131,7 +131,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Paliativo"
+                            placeholder="Palliative"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -148,7 +148,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Servicio/Unidad"
+                            placeholder="Service/Unit"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -165,7 +165,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput 
                           style={styles.inputRed} 
-                          placeholder="Mes" 
+                          placeholder="Month" 
                           onBlur={onBlur}
                           onChangeText={onChange}
                           value={value}
@@ -182,7 +182,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Fecha Primer EVAT rojo"
+                            placeholder="First red EVAT date"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -199,7 +199,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Hora Primer EVAT rojo"
+                            placeholder="First red EVAT hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -301,7 +301,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Consulta a UCI"
+                            placeholder="UCI consultation"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -318,7 +318,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Hora de consulta"
+                            placeholder="Consultation hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -335,7 +335,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Intervención?(UCI o Pedi)"
+                            placeholder="Intervention?(UCI o Pedi)"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -352,7 +352,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Hora de intervención"
+                            placeholder="Intervention hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -369,7 +369,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Tipo de intervención"
+                            placeholder="Type of intervention"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -386,7 +386,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Duración de EVAT rojo(Horas)"
+                            placeholder="Red EVAT duration (hours)"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -403,7 +403,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Evento de deterioro"
+                            placeholder="Impairment event"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -420,7 +420,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Tipo de Evento"
+                            placeholder="Event type"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -437,7 +437,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Fecha de Evento"
+                            placeholder="Event date"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -454,7 +454,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Hora de Evento"
+                            placeholder="Event hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -471,7 +471,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Traslado a UCI/UTI"
+                            placeholder="Transfer to UCI/UTI"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -488,7 +488,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Fecha de traslado"
+                            placeholder="Transfer date"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -505,7 +505,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Hora de Traslado"
+                            placeholder="Transfer hour"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -522,7 +522,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Estancia UCI/UTI"
+                            placeholder="UCI/UTI stay"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -539,7 +539,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputRed}
-                            placeholder="Mortalidad de UCI o piso"
+                            placeholder="UCI or floor mortality"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -556,7 +556,7 @@ const RedEvat = () => {
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
                             style={styles.inputComment}
-                            placeholder="Escriba un Comentario"
+                            placeholder="Write a comment"
                             onBlur={onBlur}
                             onChangeText={onChange}
                             value={value}
@@ -569,7 +569,7 @@ const RedEvat = () => {
                   style={styles.btnSave}
                   onPress={handleSubmit(onSubmit)}
                 >
-                    <Text>Guardar</Text>
+                    <Text>Save</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAwareScrollView>

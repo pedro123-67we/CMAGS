@@ -17,7 +17,7 @@ const COLORS = ["#F7F7F7", "#7DCE13", "#EAE509", "#F76767"]
 
 const DailyForm = () => {
 	const { control, handleSubmit, setValue, watch } = useForm();
-	const [ selectedValue, setSelectedValue] = useState("Temperatura")
+	const [ selectedValue, setSelectedValue] = useState("Temperature")
 	const { postEvatForm } = useFetch();
 	
 	const cleanForm = () => {
@@ -40,7 +40,7 @@ const DailyForm = () => {
 	};
 	const onSubmit = async data => {
 		try {
-			Alert.alert("Formulario llenado", "", [
+			Alert.alert("Completed form", "", [
 				{
 					text: "Ok",
 					onPress: async () => {
@@ -80,7 +80,7 @@ const DailyForm = () => {
 						<TextInput
 							keyboardType="numeric"
 							maxLength={2}
-							placeholder="Hora de revision"
+							placeholder="Revision time"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -95,7 +95,7 @@ const DailyForm = () => {
 						onValueChange={(itemValue) =>
 							setSelectedValue(itemValue)}
 					>
-						<Picker.Item label="Temperatura" value="0" />
+						<Picker.Item label="Temperature" value="0" />
 						<Picker.Item label="35-35.5" value="35" />
 						<Picker.Item label="36-36.5" value="36" />
 						<Picker.Item label="37-37.5" value="37" />
@@ -111,7 +111,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Presion arterial mmHg"
+							placeholder="Blood pressure mmHg"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -129,7 +129,7 @@ const DailyForm = () => {
 						<TextInput
 							keyboardType="numeric"
 							maxLength={3}
-							placeholder="Frecuencia cardiaca"
+							placeholder="Heart rate"
 							style={styles.evat(watch,"FC", heartRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -147,7 +147,7 @@ const DailyForm = () => {
 						<TextInput
 							keyboardType="numeric"
 							maxLength={3}
-							placeholder="Frecuencia respiratoria"
+							placeholder="Breathing rate"
 							style={styles.evat(watch,"FR", breathingRateTable)}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -198,7 +198,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Dolor"
+							placeholder="Pain"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -215,7 +215,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Llenado capilar"
+							placeholder="Capillary filling"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -231,7 +231,7 @@ const DailyForm = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Pupila derecha"
+							placeholder="Right pupil "
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -247,7 +247,7 @@ const DailyForm = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Pupila izquierda"
+							placeholder="Left pupil"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -276,7 +276,7 @@ const DailyForm = () => {
 				
 				 <Text style={styles.evat(watch,"FC", heartRateTable )}>Cardio:{resultRateLevel(15, parseInt(watch("FC"))|| 0, heartRateTable)}</Text>
 
-                 <Text style={styles.evat(watch,"FR", breathingRateTable)}>Respiratorio:{resultRateLevel(15, parseInt(watch("FR"))|| 0, breathingRateTable)}</Text>
+                 <Text style={styles.evat(watch,"FR", breathingRateTable)}>Respiratory:{resultRateLevel(15, parseInt(watch("FR"))|| 0, breathingRateTable)}</Text>
                  
 				 <Controller
 					control={control}
@@ -286,7 +286,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Preocupación enfermera"
+							placeholder="Nurse concern"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -303,7 +303,7 @@ const DailyForm = () => {
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
 							keyboardType="numeric"
-							placeholder="Preocupación familia"
+							placeholder="Family concern"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -314,7 +314,7 @@ const DailyForm = () => {
 				/>
                 
 				<TouchableOpacity style={styles.buttonContainer} onPress={handleSubmit(onSubmit)}>
-					<Text style={styles.ButtonText}>Guardar</Text>
+					<Text style={styles.ButtonText}>Save</Text>
 				</TouchableOpacity>
 			</SafeAreaView>
 		</KeyboardAwareScrollView>
