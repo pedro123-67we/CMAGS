@@ -26,17 +26,4 @@ const useErrorHandler = () => {
 
 export default useErrorHandler;
 
-//que hiciste ayer?
-//subio el pull request
-//realizo pull request en el backend y front
-//checar problemas con lo de axios
 
-//que vas a hacer hoy?
-//corregisr lo del package e ayudar con error de axios
-//agregar cosas faltantyes y completar la parte web y del backend
-//
-
-//Tienes problemas?
-//con lo de axios y lo del package
-//no no tiene problenaas
-//axios

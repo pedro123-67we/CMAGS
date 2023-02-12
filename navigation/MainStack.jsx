@@ -2,11 +2,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 //Screens
-import Home1 from "../page/Home";
+import Home from "../page/Home";
 import Settings from "../page/Settings";
 import RedEvat from "../page/RedEvat";
 
-//const Tab = createMaterialBottomTabNavigator();
 const Tab = createBottomTabNavigator();
 
 const MyTabs = () => {
@@ -23,8 +22,8 @@ const MyTabs = () => {
       }}
     >
       <Tab.Screen
-        name="Home1"
-        component={Home1}
+        name="Home"
+        component={Home}
         options={{
           tabBarLabel: "Home",
           headerShown: false,
@@ -55,7 +54,7 @@ const MyTabs = () => {
         name="Settings"
         component={Settings}
         options={{
-          tabBarLabel: "Ajustes",
+          tabBarLabel: "Settings",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="account-cog"
