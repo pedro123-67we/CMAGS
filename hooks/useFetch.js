@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import Requests from "../constants/requests";
 import useErrorHandler from "./useErrorHandler";
 
@@ -131,7 +131,7 @@ const useFetch = () => {
   });
 
   //POST request to register RedEvat form
-  const postRedEvatForm = funcErrorWrapper(async info =>{
+  const postRedEvatForm = funcErrorWrapper(async info => {
     const { data } = await axios.post(Requests.RED_EVAT_REQUEST, { ...info });
     return data.result;
   });
@@ -260,4 +260,3 @@ const useFetch = () => {
 };
 
 export default useFetch;
-
