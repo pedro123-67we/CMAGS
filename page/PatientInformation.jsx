@@ -10,21 +10,21 @@ const PatientInformation = () => {
 	return data.map(patient => (
 		<KeyboardAwareScrollView>
 			<View>
-				<Text style={styles.labelTittle}>Informacion del Paciente:</Text>
+				<Text style={styles.labelTittle}>Patient Information:</Text>
 				<View style={styles.lineStyle} />
-				<Text style={styles.labelSubTittle}>Nombre:</Text>
+				<Text style={styles.labelSubTittle}>Name Patient:</Text>
 				<Text style={styles.patientInfo}>{patient.name}</Text>
 				<View style={styles.lineStyle} />
-				<Text style={styles.labelSubTittle}>Edad:</Text>
+				<Text style={styles.labelSubTittle}>Age:</Text>
 				<Text style={styles.patientInfo}>13</Text>
 				<View style={styles.lineStyle} />
-				<Text style={styles.labelSubTittle}>Dx Oncologicó:</Text>
+				<Text style={styles.labelSubTittle}>Dx Oncology:</Text>
 				<Text style={styles.patientInfo}>si</Text>
 				<View style={styles.lineStyle} />
-				<Text style={styles.labelSubTittle}>Paliativo:</Text>
+				<Text style={styles.labelSubTittle}>Paliative:</Text>
 				<Text style={styles.patientInfo}>si</Text>
 				<View style={styles.lineStyle} />
-				<Text style={styles.labelSubTittle}>Enfermera:</Text>
+				<Text style={styles.labelSubTittle}>Nurse:</Text>
 				<Text style={styles.patientInfo}>Erika Valverde</Text>
 				<View style={styles.lineStyle} />
 			</View>

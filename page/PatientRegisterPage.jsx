@@ -25,19 +25,19 @@ const PatientRegisterPage = () => {
 
 	const onSubmit = async data => {
 		try {
-			Alert.alert('Agregar Paciente?', '', [
+			Alert.alert('Add Patient?', '', [
 				{
 					text: 'Si',
 					onPress: async () => {
 						await patientRequest(data);
-						Alert.alert('Agregado Correctamente');
+						Alert.alert('Added Successfully');
 					},
-					style: 'Agregado',
+					style: 'Added',
 				},
 				{
 					text: 'No',
-					onPress: () => Alert.alert('No agregar'),
-					style: 'No Agregado',
+					onPress: () => Alert.alert('Do not add'),
+					style: 'Not added',
 				},
 			]);
 		} catch (err) {
@@ -55,7 +55,7 @@ const PatientRegisterPage = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Ingrese su nombre completo"
+							placeholder="Enter your full name"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -71,7 +71,7 @@ const PatientRegisterPage = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Tipo de cancer"
+							placeholder="Dx Oncology"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -87,7 +87,7 @@ const PatientRegisterPage = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Servicios"
+							placeholder="Services"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -103,7 +103,7 @@ const PatientRegisterPage = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Paliativo"
+							placeholder="Palliative"
 							style={styles.input}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -119,7 +119,7 @@ const PatientRegisterPage = () => {
 					}}
 					render={({ field: { onChange, onBlur, value } }) => (
 						<TextInput
-							placeholder="Edad"
+							placeholder="Age"
 							keyboardType="numeric"
 							style={styles.input}
 							onBlur={onBlur}
