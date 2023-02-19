@@ -7,13 +7,13 @@ import useFetch from '../hooks/useFetch';
 const PatientInformation = () => {
 	const { getPatientsFilter } = useFetch();
 	const { data } = useFetchDataById(getPatientsFilter);
-	return data.map(patient => (
+	return (
 		<KeyboardAwareScrollView>
 			<View>
 				<Text style={styles.labelTittle}>Patient Information:</Text>
 				<View style={styles.lineStyle} />
 				<Text style={styles.labelSubTittle}>Name Patient:</Text>
-				<Text style={styles.patientInfo}>{patient.name}</Text>
+				<Text style={styles.patientInfo}>Hugo</Text>
 				<View style={styles.lineStyle} />
 				<Text style={styles.labelSubTittle}>Age:</Text>
 				<Text style={styles.patientInfo}>13</Text>
@@ -29,7 +29,7 @@ const PatientInformation = () => {
 				<View style={styles.lineStyle} />
 			</View>
 		</KeyboardAwareScrollView>
-	));
+	);
 };
 
 const styles = StyleSheet.create({

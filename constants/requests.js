@@ -2,19 +2,14 @@ const DAILY_FORM_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/medical-daily-form/";
 const PATIENT_EVAT_FORMS =
   process.env.REACT_APP_URL + "/api/v1/medical-daily-form/patient-evat-form/";
-
 const RED_EVAT_REQUEST = process.env.REACT_APP_URL + "/api/v1/red-evat/";
-
 const RECORD_REQUEST = process.env.REACT_APP_URL + "/api/v1/record/";
-
 const LOGIN_REQUEST = process.env.REACT_APP_URL + "/api/v1/auth/";
-
 const PATIENT_REQUEST = process.env.REACT_APP_URL + "/api/v1/patient/";
 const PATIENT_FILTER_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/patient/filter?";
 const PATIENT_ASSIGN_NURSE =
   process.env.REACT_APP_URL + "/api/v1/patient/asign-nurse/";
-
 const EMPLOYEE_FILTER_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/employee/filter?";
 const EMPLOYEE_REQUEST = process.env.REACT_APP_URL + "/api/v1/employee/";
@@ -24,7 +19,8 @@ const EMPLOYEE_NURSE_PATIENTS_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/patient/nurse-patients/";
 const EMPLOYEE_DOCTORS_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/employee/doctors";
-
+const CHANGE_PASSWORD =
+  process.env.REACT_APP_URL + "/api/v1/employee/change-password/";
 const NOTIFICATION_REQUEST =
   process.env.REACT_APP_URL + "/api/v1/notification/";
 const PATIENT_NOTIFICATIONS_REQUEST =
@@ -37,7 +33,8 @@ const NEW_DOCTOR_NOTIFICATIONS =
   process.env.REACT_APP_URL + "/api/v1/notification/new-doctor-notifications/";
 const CONFIRM_NOTIFICATION =
   process.env.REACT_APP_URL + "/api/v1/notification/confirm-notification/";
-
+const NOT_SEEN_NOTIFICATION =
+  process.env.REACT_APP_URL + "/api/v1/notification/not-seen-notification/";
 const Requests = {
   DAILY_FORM_REQUEST,
   RED_EVAT_REQUEST,
@@ -58,6 +55,16 @@ const Requests = {
   PATIENT_EVAT_FORMS,
   NEW_DOCTOR_NOTIFICATIONS,
   CONFIRM_NOTIFICATION,
+  NOT_SEEN_NOTIFICATION,
+  CHANGE_PASSWORD,
 };
-
 export default Requests;
+
+
+
+
+
+
+
+
+

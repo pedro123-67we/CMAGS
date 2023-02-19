@@ -115,11 +115,11 @@ export default function App() {
 						onPress={async () => {
 							try {
 								await axios.post(
-									process.env.API_BASE_URL + '/api/v1/notification/',
+									process.env.REACT_APP_URL + '/api/v1/notification/',
 									{
 										title: 'hola',
 										description: 'hola',
-										idPatient: '63a145eaa153becce4032053',
+										idPatient: '63e26f1ed1bd2c776c09aa7e',
 										idTransmitter: '63b1f362e650d1d3e3dfe5ae',
 										idDoctor: '63b59a69775e132b0acec6e6',
 									},

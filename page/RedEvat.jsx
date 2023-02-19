@@ -45,15 +45,15 @@ const RedEvat = () => {
 		setValue('Mortality', '');
 		setValue('Comment', '');
 	};
-	const { redEvatpost } = useFetch();
+	const { postRedEvatForm } = useFetch();
 
 	const onSubmit = async data => {
 		try {
-			Alert.alert('Add patient?', '', [
+			Alert.alert('Save?', '', [
 				{
 					text: 'Yes',
 					onPress: async () => {
-						await redEvatpost(data);
+						await postRedEvatForm(data);
 						Alert.alert('saved correctly');
 					},
 					style: 'Added',
@@ -68,7 +68,6 @@ const RedEvat = () => {
 		} catch (err) {
 			Alert.alert(err.message);
 		}
-		cleanForm();
 	};
 
 	return (
