@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import MyTabs from "../navigation/MainStack";
 import LoginPage from "../page/LoginPage";
+import Register from "../page/Register";
 import DailyForm from "../page/DailyForm";
 import Notifications from "../page/NotificationForm";
 import PatientInformation from "../page/PatientInformation";
@@ -18,6 +19,10 @@ const Navigation = () => {
           name="Login"
           component={LoginPage}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
         />
         <Stack.Screen
           name="Home"

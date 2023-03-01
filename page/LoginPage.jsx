@@ -18,7 +18,7 @@ const LoginPage = ({ navigation }) => {
 	return (
 		<KeyboardAwareScrollView>
 			<View style={styles.container}>
-				<Image style={styles.image} source={require('../assets/1.jpg')} />
+				<Text>Login</Text>
 				<Controller
 					control={control}
 					rules={{
@@ -61,6 +61,12 @@ const LoginPage = ({ navigation }) => {
 				>
 					<Text style={styles.ButtonText}>Sign in</Text>
 				</TouchableOpacity>
+
+				<TouchableOpacity 
+				style={styles.btnSingup} 
+				onPress ={() => navigation.navigate('Register')} >
+					<Text style={styles.ButtonText}>Singup</Text>
+				</TouchableOpacity>
 			</View>
 		</KeyboardAwareScrollView>
 	);
@@ -86,12 +92,12 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		margin: 'auto',
 		alignItems: 'center',
-		marginTop: '45%',
+		marginTop: '40%',
 	},
 	buttonContainer: {
 		backgroundColor: 'green',
-		marginBottom: '25%',
-		marginTop: '5%',
+		marginBottom: '5%',
+		marginTop: '10%',
 		paddingHorizontal: 50,
 		paddingVertical: 10,
 		alignItems: 'center',
@@ -102,6 +108,16 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 		borderRadius: 10,
 	},
+	btnSingup:{
+		backgroundColor: 'blue',
+		marginBottom: '14%',
+		marginTop: '1%',
+		alignItems: 'center',
+		borderRadius: 8,
+		width: '80%',
+		paddingHorizontal: 50,
+		paddingVertical: 10,
+	}
 });
 
 export default LoginPage;

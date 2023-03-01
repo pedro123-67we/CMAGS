@@ -15,6 +15,7 @@ const useAlert = () => {
         return await func(...args);
       } catch (error) {
         Alert.alert(error.message);
+        console.log(error.message)
       }
     };
   };
